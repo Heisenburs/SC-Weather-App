@@ -1,0 +1,81 @@
+h1 {
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: 100px;
+}
+.current {
+  font-family: "Bebas Neue", cursive;
+  font-size: larger;
+}
+#searchbar {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+#glass {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  left: 214px;
+  bottom: 54px;
+}
+.search {
+  font-size: xx-large;
+}
+.location {
+  text-align: center;
+  font-size: 65px;
+  font-family: "Bebas Neue", cursive;
+  padding: 20px;
+}
+h3,
+a:link {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 50px;
+  color: black;
+  text-decoration: none;
+}
+.row {
+  text-align: center;
+}
+img {
+  max-width: 300px;
+}
+.livetemp {
+  padding-top: 87px;
+  font-size: 27px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+.card-header {
+  font-family: "Bebas Neue", cursive;
+  font-size: larger;
+  text-align: center;
+}
+h6,
+.card-text,
+.card-title {
+  text-align: center;
+}
+.card-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: larger;
+}
+.forecast {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+b {
+  font-family: "Raleway", sans-serif;
+}
+.card-group {
+  margin-top: 30px;
+}
+.footer {
+  text-align: center;
+  font-size: larger;
+  opacity: 0.6;
+  font-family: "Courier New";
+}

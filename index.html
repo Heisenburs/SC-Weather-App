@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Weather App</title>
+	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Montserrat&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <p class="current"> <span id="currentDay">Monday</span> <br>
+<span id="currentDate">5/20</span> <br>
+<span id="currentTime">12:26</span> <br>
+</p>
+<h1>Weather</h1>
+<form action="" class="search">
+    <input type="text" id="searchbar" placeholder="Search">
+    <input type="submit" value="🔍" id="glass">
+</form>
+<h2 class="location">Boston</h2>
+<h3><a href="#" class="change">68°F</a></h3>
+
+<div class="row">
+    <div class="col "><img src="media/cloudy.svg" alt=""></div>
+    <div class="col livetemp">
+        HI : 71°F
+        <br>
+        LO : 62°F
+        <br>
+         Humidity: 83%
+    </div>
+</div>
+<br>
+
+<div class="card-group">
+  <div class="card">
+      <div class="card-header">
+    Tuesday
+  </div>
+    <img src="media/cloudy.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">71°F</h5>
+      <p class="card-text forecast">
+          <h6>Cloudy</h6> <br><b> HI: 75°F  <br> LO: 69°F</b></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+    Wednesday
+  </div>
+    <img src="media/sunny.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">75°F</h5>
+      <p class="card-text forecast"><h6>Sunny</h6> <br><b> HI: 76°F <br> LO: 71°F</b></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+    Thursday
+  </div>
+    <img src="media/sunny.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">76°F</h5>
+      <p class="card-text forecast">
+          <h6>Sunny</h6>
+          <br><b>
+          HI: 78° <br>
+          LO: 68°F</b>
+      </p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+    Friday
+  </div>
+    <img src="media/sunny.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">71°F</h5>
+      <p class="card-text forecast"><h6>Sunny</h6>
+    <br><b>
+HI: 71°F <br>
+LO: 64°F</b>
+</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+    Saturday
+  </div>
+    <img src="media/rainy.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">65°F</h5>
+      <p class="card-text forecast">
+          <h6>Rain Showers</h6>
+          <br> <b>
+          HI: 65°F <br>
+          LO: 59°F</b>
+         
+      </p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p class="footer"><small>Coded by Jada Burs</small></p>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
