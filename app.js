@@ -63,27 +63,35 @@ let form = document.querySelector("form.search");
 form.addEventListener("submit", searchCity);
 
 // Fahrenheit to Celsius
-function changeDegree(event) {
+/*function changeDegree(event) {
   event.preventDefault();
   let h3 = document.querySelector("a.change");
   h3.innerHTML = `20°C`;
 }
 let change = document.querySelector("a.change");
-change.addEventListener("click", changeDegree);
+change.addEventListener("click", changeDegree);*/
 
-function showTemperature(response) {
+//API
+
+function displayWeatherCondition(response) {
   console.log(response);
-  let weatherDiv = document.querySelector("a.change");
-  let temperature = Math.round(response.data.main.temp);
-  weatherDiv.innerHTML = `${temperature}`;
+  document.querySelector("h2").innerHTML = response.data.name;
+  document.querySelector("h3").innerHTML = Math.round(response.data.main.temp);
+
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 
-let city = "currentCity.value";
-let apiKey = "9de1c9542ae6e003bf1ad4ffc2d52045";
-let unit = "metric";
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+function searchUpCity(city) {
+  let apiKey = "9de1c9542ae6e003bf1ad4ffc2d52045";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
 
-axios.get(url).then(showTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#searchbar").value;
+  searchUpCity(city);
+}
 
-function showPos(position) {}
-navigator.geolocation.getCurrentPosition(showPos);
+let searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", handleSubmit);
