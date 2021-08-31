@@ -79,3 +79,7 @@ b {
   opacity: 0.6;
   font-family: "Courier New";
 }
+
+a.netlify {
+  font-size: large;
+}
