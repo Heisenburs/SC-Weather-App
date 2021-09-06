@@ -1,5 +1,4 @@
 let now = new Date();
-console.log(now);
 
 let days = [
   "Sunday",
@@ -10,33 +9,24 @@ let days = [
   "Friday",
   "Saturday",
 ];
-console.log(days[4]);
-
-console.log(now.getMinutes());
 
 let day = days[now.getDay()];
-console.log(day);
 
 let month = now.getMonth();
-console.log(month);
 
 let date = now.getDate();
-console.log(date);
 
 let year = now.getFullYear();
-console.log(year);
 
 let hour = now.getHours();
 if (hour < 10) {
   hour = `0${hour}`;
 }
-console.log(hour);
 
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-console.log(minutes);
 
 let currentDay = document.querySelector("#currentDay");
 currentDay.innerHTML = `${day}`;
@@ -74,7 +64,6 @@ change.addEventListener("click", changeDegree);*/
 //API
 
 function displayWeatherCondition(response) {
-  console.log(response);
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector("h3").innerHTML = Math.round(response.data.main.temp);
 
