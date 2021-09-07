@@ -80,14 +80,15 @@ change.addEventListener("click", changeDegree);*/
 
 function displayWeatherCondition(response) {
   console.log(response);
-
-  // document.querySelector("h2").innerHTML = response.data.name;
-  // document.querySelector("h3").innerHTML = Math.round(response.data.main.temp);
-
-  // document.querySelector(".humidity").innerHTML = response.data.main.humidity;
+  let location = document.querySelector(".location");
+  location.innerHTML = response.data.name;
+  document.querySelector(
+    ".tempy"
+  ).innerHTML = `Math.round${response.data.main.temp}°`;
+  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
 }
 
-function searchUpCity(city) {
+function searchCity(city) {
   let apiKey = "9de1c9542ae6e003bf1ad4ffc2d52045";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -97,7 +98,7 @@ function searchUpCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#searchbar");
-  searchUpCity(city.value);
+  searchCity(city.value);
 }
 
 let searchForm = document.querySelector("form");
