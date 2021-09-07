@@ -1,4 +1,5 @@
 let now = new Date();
+console.log(now);
 
 let days = [
   "Sunday",
@@ -10,9 +11,24 @@ let days = [
   "Saturday",
 ];
 
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
 let day = days[now.getDay()];
 
-let month = now.getMonth();
+let month = months[now.getMonth()];
 
 let date = now.getDate();
 
@@ -65,17 +81,16 @@ change.addEventListener("click", changeDegree);*/
 function displayWeatherCondition(response) {
   console.log(response);
 
-  document.querySelector("h2").innerHTML = response.data.name;
-  document.querySelector("h3").innerHTML = Math.round(response.data.main.temp);
+  // document.querySelector("h2").innerHTML = response.data.name;
+  // document.querySelector("h3").innerHTML = Math.round(response.data.main.temp);
 
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  let humidityElement = document.querySelector(".humid");
+  // document.querySelector(".humidity").innerHTML = response.data.main.humidity;
 }
 
 function searchUpCity(city) {
   let apiKey = "9de1c9542ae6e003bf1ad4ffc2d52045";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  console.log(apiKey);
+
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
