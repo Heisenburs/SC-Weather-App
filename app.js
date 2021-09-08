@@ -85,8 +85,8 @@ function displayWeatherCondition(response) {
   document.querySelector(".tempy").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
-  let windElement = document.querySelector(".wind");
-  windElement.innerHTML = response.main.wind.speed;
+  let wind = document.querySelector(".wind");
+  wind.innerHTML = response.main.wind.speed;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
 }
 
