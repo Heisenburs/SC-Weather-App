@@ -60,14 +60,16 @@ function displayWeatherCondition(response) {
   console.log(response);
   let location = document.querySelector(".location");
   location.innerHTML = response.data.name;
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector(".tempy").innerHTML = `${Math.round(
-    response.data.main.temp
+    celsiusTemperature
   )}°`;
   console.log(response.data.main.humidity);
   console.log(response.data.weather[0].description);
-  wind.innerHTML = response.data.wind.speed;
+  wind.innerHTML = Math.round(response.data.wind.speed);
   let humidElement = document.querySelector("#humidity");
-  humidElement.innerHTML = response.data.main.humidity;
+  humidElement.innerHTML = `${response.data.main.humidity}%`;
   let description = document.querySelector(".description");
   description.innerHTML = response.data.weather[0].description;
 }
@@ -85,5 +87,17 @@ function handleSubmit(event) {
   searchCity(city.value);
 }
 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".tempy");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°`;
+}
+
+let celsiusTemperature = null;
+
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector(".fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
