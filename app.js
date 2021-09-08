@@ -53,30 +53,8 @@ currentDate.innerHTML = `${month}/${date}/${year}`;
 let currentTime = document.querySelector("#currentTime");
 currentTime.innerHTML = `${hour}:${minutes}`;
 
-// Feature 2
-function searchCity(event) {
-  event.preventDefault();
-  let currentCity = document.querySelector("#searchbar");
-  let newCity = document.querySelector("h2");
-  if (currentCity.value) {
-    newCity.innerHTML = `${currentCity.value}`;
-  } else {
-    newCity.innerHTML = null;
-  }
-}
-
 let form = document.querySelector("form.search");
 form.addEventListener("submit", searchCity);
-// Fahrenheit to Celsius
-/*function changeDegree(event) {
-  event.preventDefault();
-  let h3 = document.querySelector("a.change");
-  h3.innerHTML = `20°C`;
-}
-let change = document.querySelector("a.change");
-change.addEventListener("click", changeDegree);*/
-
-//API
 
 function displayWeatherCondition(response) {
   console.log(response);
@@ -92,12 +70,6 @@ function displayWeatherCondition(response) {
   humidElement.innerHTML = response.data.main.humidity;
   let description = document.querySelector(".description");
   description.innerHTML = response.data.weather[0].description;
-  // let wind = document.querySelector("#wind");
-  // wind.innerHTML = response.data.main.wind.speed;
-  // let humidElement = document.querySelector(".livetemp#humidity");
-  // humidElement.innerHTML = response.data.main.humidity;
-  // let description = document.querySelector(".description");
-  // description.innerHTML = response.data.weather[1].description;
 }
 
 function searchCity(city) {
