@@ -87,12 +87,17 @@ function displayWeatherCondition(response) {
   )}°`;
   console.log(response.data.main.humidity);
   console.log(response.data.weather[0].description);
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = response.data.main.wind.speed;
-  let humidElement = document.querySelector(".livetemp#humidity");
+  wind.innerHTML = response.data.wind.speed;
+  let humidElement = document.querySelector("#humidity");
   humidElement.innerHTML = response.data.main.humidity;
   let description = document.querySelector(".description");
-  description.innerHTML = response.data.weather[1].description;
+  description.innerHTML = response.data.weather[0].description;
+  // let wind = document.querySelector("#wind");
+  // wind.innerHTML = response.data.main.wind.speed;
+  // let humidElement = document.querySelector(".livetemp#humidity");
+  // humidElement.innerHTML = response.data.main.humidity;
+  // let description = document.querySelector(".description");
+  // description.innerHTML = response.data.weather[1].description;
 }
 
 function searchCity(city) {
