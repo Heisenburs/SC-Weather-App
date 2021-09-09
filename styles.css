@@ -97,3 +97,9 @@ b {
 a.netlify {
   font-size: large;
 }
+
+.icon {
+  position: relative;
+  top: 55px;
+  width: 50%;
+}
