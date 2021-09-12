@@ -56,6 +56,32 @@ currentTime.innerHTML = `${hour}:${minutes}`;
 let form = document.querySelector("form.search");
 form.addEventListener("submit", searchCity);
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+    <div class="forecast-header"> 
+      ${day}
+    </div>
+    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="120">
+<div class="forecast-temps">
+  <span class="forecast-max">20°</span>
+  <span class="forecast-min">11°</span> 
+</div>
+  </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   console.log(response);
   let location = document.querySelector(".location");
@@ -114,3 +140,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector(".celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+displayForecast();
