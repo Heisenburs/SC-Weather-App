@@ -56,7 +56,8 @@ currentTime.innerHTML = `${hour}:${minutes}`;
 let form = document.querySelector("form.search");
 form.addEventListener("submit", searchCity);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector(".forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -82,6 +83,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "9de1c9542ae6e003bf1ad4ffc2d52045";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=
+  ${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
   console.log(response);
   let location = document.querySelector(".location");
@@ -103,6 +112,8 @@ function displayWeatherCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -141,4 +152,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector(".celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-displayForecast();
+searchCity("New York");
